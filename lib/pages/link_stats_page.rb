@@ -6,6 +6,5 @@ class LinkStatsPage
   def num_of_clicks
     return android_click_stats
   end
-
-
+  
 end

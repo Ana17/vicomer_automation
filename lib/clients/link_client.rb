@@ -2,7 +2,7 @@ require 'rest-client'
 class LinkClient
 
   def create_marketing_link(param1)
-  
+
     data_hash = {
         branch_key: 'key_live_ifsz40ydMTsdvBXScpf4flllCCipOrT6',
         channel: 'Automation',
@@ -19,7 +19,6 @@ class LinkClient
 
     hash = JSON.parse(variable.body)
     api_link = hash['url']
-
 
     return api_link
   end

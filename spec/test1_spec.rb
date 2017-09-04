@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Branch Home Challenge' do
+describe 'Branch Home Challenge:' do
 
   it 'Create marketing link thru API & check on UI if it shows up & click on the link
   thru API & check if click shows up' do
@@ -37,7 +37,7 @@ describe 'Branch Home Challenge' do
     response = link_client.click_link(api_link)
     puts "HTTP STATUS CODE: #{response.code}"
 
-    # check if API link shows up in liveview-clicks tab w Android OS
+    # check if click entry is on liveview-clicks tab w Android OS
     live_view_page.switch_tab_to_clicks
 
     WaitUtil.wait_for_condition("live view- clicks OS & CLICK to show up", timeout_sec: 40, delay_sec: 3, verbose: true) do
@@ -47,7 +47,6 @@ describe 'Branch Home Challenge' do
 
       click_OS = live_view_page.get_last_row_OS
       click_OS == 'Android'
-
     end
     puts 'LIVE VIEW CLICKS PAGE CONFIRMED OS=ANDROID & CLICK'
 

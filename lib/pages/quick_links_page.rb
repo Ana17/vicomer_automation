@@ -6,7 +6,6 @@ class QuickLinksPage
   element(:action_btn, :css => 'button[data-testid="btn-action-menu"]')
   element(:view_stats_btn, :partial_link_text => 'View stats')
 
-
   def click_quick_links
     self.quick_links_side_button_element.click
   end
