@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-# describe 'Branch Home Challenge:' do
+describe 'Branch Home Challenge:' do
 
   it 'Create marketing link thru API & check on UI if it shows up & click on the link
   thru API & check if click shows up' do
