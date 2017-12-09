@@ -1,25 +1,23 @@
 require 'spec_helper'
 
-describe 'Branch Home Challenge:' do
-  it 'Vicomer tralala' do
+describe 'Vicomer' do
+  it 'Tralala' do
 
-    # random_link_name = (0...5).map { ('a'..'z').to_a[rand(26)] }.join
+    random_num = (0...5).map { ('0'..'9').to_a[rand(10)] }.join
 
-    # create marketing link thru API
-    # link_client = LinkClient.new
-    # api_link = link_client.create_marketing_link(random_link_name)
-
-    # sign in & go to dashboard
-
-    vicomer_landing = visit VicomerLandingPage
-
-    WaitUtil.wait_for_condition("get started button shows up", timeout_sec: 40, delay_sec: 2, verbose: true) do
-      vicomer_landing.get_started_btn_element.visible?
+    landing_page = visit LandingPage
+    # binding.pry
+    WaitUtil.wait_for_condition("get started button shows up", timeout_sec: 40, delay_sec: 7, verbose: true) do
+      landing_page.get_started_btn_element.visible?
     end
+    landing_page.click_get_started
 
-    vicomer_landing.click_get_started
-    
-    # dashboard = on DashboardPage
+
+    dashboard_page = on DashboardPage
+    dashboard_page.click_sign_up_upper_btn # doesn't get clicked - why?
+    dashboard_page.sign_up("automation_name_#{random_num}", "automation_email_#{random_num}@gmail.com", 'automation_password')
+
+    sleep 10
 
     # check if API link shows up in live view-links tab
     # dashboard.click_liveview
